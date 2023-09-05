@@ -10,11 +10,10 @@
 import Foundation
 
 
-
 class NetworkManager {
     
     //Devuelve un array de POST
-    func getPosts(dataToReturn: @escaping([Post])->()) { // AQUI
+    func getPosts(dataToReturn: @escaping([Post])->()) {
         
         guard let url = URL (string: "https://jsonplaceholder.typicode.com/posts") else {
             fatalError("Invalid URL, can't access")
