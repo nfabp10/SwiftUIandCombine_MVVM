@@ -5,15 +5,22 @@
 //  Created by Nfabp10 on 05/09/2023.
 //
 
+//Seria la vista
+
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var model = PostViewModel()
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            
+            List(model.posts){ post in
+                Text(post.title)
+            }
+            
         }
         .padding()
     }
